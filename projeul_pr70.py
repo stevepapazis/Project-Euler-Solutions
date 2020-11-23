@@ -43631,3 +43631,5 @@ print(
     minimum,".",
     sep=""
     )
+
+input()
