@@ -1,5 +1,3 @@
-"""\\Problem 116 - Project Euler.htm"""
-
 def function(lengthcolour, n):
     black = 50 - n*lengthcolour
     end = black + n + 1

@@ -1,5 +1,3 @@
-"""\\Problem 117 - Project Euler.htm"""
-
 def function(black, red, green, blue):
     n = 1
     c1 = 2

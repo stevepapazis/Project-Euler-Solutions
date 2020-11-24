@@ -1,5 +1,3 @@
-"""\\Problem 173 - Project Euler.htm"""
-
 helpme = "projeul_pr173_helpme.jpeg"
 
 c=0

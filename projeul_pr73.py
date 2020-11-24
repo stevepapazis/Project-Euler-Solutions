@@ -12,8 +12,6 @@ It can be seen that there are 3 fractions between 1/3 and 1/2.
 How many fractions lie between 1/3 and 1/2 in the sorted set of reduced proper
 fractions for d ≤ 12,000?"""
 
-helpme = "projeul_pr73_helpme.jpeg"
-
 primes = [3, 5, 7]
 for i in range(9, 78, 2):
     flag = 0
