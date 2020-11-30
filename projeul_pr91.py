@@ -1,6 +1,6 @@
 problem = """Problem 91: Right triangles with integer coordinates"""
 
-explaination = """\
+explanation = """\
 There are three distinct cases for a right triangle OPQ with non-negative
 integer coordinates, where P = (p1, p2) and Q = (q1, q2) such that p1<=q1,
 p2>=q2 and 0<=p1,p2,q1,q2<=n:
@@ -37,7 +37,7 @@ for q1 in range(0,n+1):
 trianglesWithQasRightAngle = trianglesWithPasRightAngle
 
 
-print(problem, explaination, sep="\n\n")        
+print(problem, explanation, sep="\n\n")        
 input(
     "Number of right triangles with non-negative integer coordinates<="
     + str(n)

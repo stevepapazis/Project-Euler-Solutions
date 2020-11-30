@@ -9841,7 +9841,7 @@ Find the smallest member of the longest amicable chain with no element
 exceeding one million.
 """
 
-explaination = """\
+explanation = """\
 The sum d of the divisors of a number is a multiplicative function, that
 is d(1)=1 and d(a*b)=d(a)*d(b) whenever gcd(a,b)=1. Moreover, it is
 straightforward to compute that d(p**a)=(p**(a+1)-1)/(p-1). Using those
@@ -9906,7 +9906,7 @@ solution = min(maxChain)
 print(
     problem,
     "\n\n\n",
-    explaination,
+    explanation,
     "\n\n\n",
     "All the amicable chains with elements less than one million are:\n",
     sep=""

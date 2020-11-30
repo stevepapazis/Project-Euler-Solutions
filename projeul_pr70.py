@@ -43585,7 +43585,7 @@ Find the value of n, 1<n<10**7, for which φ(n) is a permutation of n and the
 ratio n/φ(n) produces a minimum.
 """
 
-explaination = """\
+explanation = """\
 Since we know that φ(n) = n * Π(1-1/p_i) when  Π p_i^a_i  is the prime
 factorization of n, we deduce the equation n/φ(n)  =  Π p_i/(p_i-1).
 
@@ -43624,7 +43624,7 @@ for p in listofprimes:
 print(
     problem,
     "\n\n\n",
-    explaination,
+    explanation,
     "\n\n\n",
     "By testing all the numbers produced that way we find that n/φ(n) is",
     "\nminimized for n=", solution,", where it attains the minumum value ",
