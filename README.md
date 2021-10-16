@@ -1,6 +1,13 @@
 # Project-Euler-Solutions
 ![alt text](https://projecteuler.net/profile/stevepapazis.png?)
 
+243: 15 Oct 21 (22:04)\
+401: 13 Oct 21 (16:15)\
+435: 01 Oct 21 (14:03)\
+203: 22 Sep 21 (00:07)\
+078: 19 Sep 21 (19:08)\
+148: 19 Sep 21 (14:58)\
+064: 17 Sep 21 (16:35)\
 684: 08 Feb 21 (00:58)\
 080: 23 Dec 20 (22:38)\
 381: 22 Dec 20 (18:58)\
