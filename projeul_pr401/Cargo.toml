@@ -1,0 +1,13 @@
+[package]
+name = "projeul_pr401"
+version = "0.1.0"
+authors = ["stevepapazis <stevepapazis@users.noreply.github.com>"]
+edition = "2018"
+
+[dependencies]
+
+[[bin]]
+name = "projeul_pr401"
+path = "projeul_pr401.rs"
+test = false
+bench = false

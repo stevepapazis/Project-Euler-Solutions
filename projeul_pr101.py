@@ -1,6 +1,3 @@
-"""\\Problems - Project Euler.htm"""
-
-
 def u(n)->'1-n+n**2-n**3+n**4-n**5+n**6-n**7+n**8-n**9+n**10':
     #return n**3    #test sequence from the example
     S=1
@@ -58,7 +55,7 @@ while coefficients != [1, -1, 1, -1, 1, -1, 1, -1, 1, -1, 1]: #[0,0,0,1]
     coefficients = OP(k)
 print("Solution: ", int(SumofFITofBOPofUn))
 input()
-    
+
 #PROBLEM IN PRECISION
 """
 def Xi(n, m, detAiB):
@@ -77,47 +74,4 @@ def Xi(n, m, detAiB):
             detAiB = AB[i+1][i+1]/detAiB
         else: detAiB /= AB[i+1][i+1]
     return detAiB
-#"""
-
-#WRONG (FUCKED THE MATH BEHIND IT)
-"""
-def X(p):
-    M = []
-    for k in range(1, p+1):
-        M.append((u(k)-sum([u(j)*j**(k-j) for j in range(1, k)])))
-        for i in range(2, p):
-            if i!=k:
-                 M[k-1]*=i**(i-1)-sum([i**(j-1)*j**(i-j) for j in range(1, i) if j!=k])-u(i)/u(k)*k**(i-1)
-                 M[k-1]/=i**(i-1)-sum([i**(j-1)*j**(i-j) for j in range(1, i)])
-        M[k-1]/=k**(k-1)-sum([k**(j-1)*j**(k-j) for j in range(1, k)])
-    return M
-\"""
-def X2(p):
-    M = []
-    temp = detA(p)
-    for k in range(1, p+1):
-        last = []
-        t = (u(k)-sum([u(j)*j**(k-j) for j in range(1, k)]))
-        if temp%t==0: M.append(temp//t)
-        else:
-            M.append(temp)
-            last.append(t)
-        multiply = 0
-        for i in range(2, p):
-            if i!=k:
-                t = i**(i-1)-sum([i**(j-1)*j**(i-j) for j in range(1, i) if j!=k])-u(i)/u(k)*k**(i-1)
-                if multiply:
-                    M[k-1]*= t
-                elif M[k-1]/t<1:
-                    multiply=1
-                    if t%M[k-1]==0: M[k-1] = t//M[k-1]
-                    else:
-                        last.append(M[k-1])
-                        M[k-1] = t
-                else:
-                    if M[k-1]%t==0: M[k-1]//=t
-                    else: last.append(t)
-            for j in last:
-                M[k-1]/=j
-    return M
 #"""

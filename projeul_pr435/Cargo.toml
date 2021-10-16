@@ -1,0 +1,14 @@
+[package]
+name = "projeul_pr435"
+version = "0.1.0"
+authors = ["stevepapazis <stevepapazis@users.noreply.github.com>"]
+edition = "2018"
+
+[dependencies]
+num-bigint = "0.4"
+
+[[bin]]
+name = "projeul_pr435"
+path = "projeul_pr435.rs"
+test = false
+bench = false
