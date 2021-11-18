@@ -1,0 +1,14 @@
+[package]
+name = "projeul_pr622"
+version = "0.1.0"
+authors = ["stevepapazis <stevepapazis@users.noreply.github.com>"]
+edition = "2018"
+
+[dependencies]
+itertools = "0.10"
+
+[[bin]]
+name = "projeul_pr622"
+path = "projeul_pr622.rs"
+test = false
+bench = false

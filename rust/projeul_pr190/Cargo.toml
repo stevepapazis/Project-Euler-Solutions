@@ -1,0 +1,11 @@
+[package]
+name = "projeul_pr190"
+version = "0.1.0"
+authors = ["stevepapazis <stevepapazis@users.noreply.github.com>"]
+edition = "2018"
+
+[[bin]]
+name = "projeul_pr190"
+path = "projeul_pr190.rs"
+test = false
+bench = false
