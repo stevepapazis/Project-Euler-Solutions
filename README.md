@@ -1,6 +1,6 @@
 # Project-Euler-Solutions
 
-Yet another repository with solutions to the Project Euler problems. 
+Yet another repository with solutions to Project Euler problems.
 
 Powered by:
 
