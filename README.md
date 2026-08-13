@@ -19,12 +19,13 @@ Powered by:
 [![C++](
     https://img.shields.io/badge/C++-%2300599C.svg?style=for-the-badge&logo=c%2B%2B&logoColor=white
     "C++"
-)](https://github.com/stevepapazis/Project-Euler-Solutions/search?l=C%2B%2B)
+)](/cpp)
 
 
-## 124 Problems down, $n$ more to go:
+## 125 Problems down, $n$ more to go:
 |         |                                                                        |                                            |
 |:-------:|:----------------------------------------------------------------------:|:------------------------------------------:|
+| **66**  | [Diophantine Equation](https://projecteuler.net/problem=66)            | 13 Aug 26 (02:48:59)                       |
 | **918** | [Recursive Sequence Summation](https://projecteuler.net/problem=918)   | 27 Apr 25 (02:09:32)                       |
 | **932** | [2025](https://projecteuler.net/problem=932)                           | 20 Apr 25 (01:09:23)                       |
 | **140** | [Modified Fibonacci golden nuggets](https://projecteuler.net/problem=140) | 02 May 22 (11:46.58)                       |
