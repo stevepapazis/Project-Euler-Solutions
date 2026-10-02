@@ -68,8 +68,7 @@ object projeul_pr686 {
         if (c + 1 >= n)
           return (0, j)
         findNextExpoLessThan(c+1, j+1)
-      }
-      else
+      } else
         findNextExpoLessThan(c, j+1)
 
     findNextExpoLessThan(0, findFirstCandidate(1))._2
