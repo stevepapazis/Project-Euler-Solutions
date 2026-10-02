@@ -22,9 +22,10 @@ Powered by:
 )](/cpp)
 
 
-## 125 Problems down, $n$ more to go:
+## 126 Problems down, $n$ more to go:
 |         |                                                                        |                                            |
 |:-------:|:----------------------------------------------------------------------:|:------------------------------------------:|
+| **485**  | [Diophantine Equation](https://projecteuler.net/problem=485)          | 02 Oct 26 (17:59:08)                       |
 | **66**  | [Diophantine Equation](https://projecteuler.net/problem=66)            | 13 Aug 26 (02:48:59)                       |
 | **918** | [Recursive Sequence Summation](https://projecteuler.net/problem=918)   | 27 Apr 25 (02:09:32)                       |
 | **932** | [2025](https://projecteuler.net/problem=932)                           | 20 Apr 25 (01:09:23)                       |
