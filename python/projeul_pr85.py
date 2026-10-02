@@ -26,4 +26,3 @@ for y in range(1,54):
         min_approximation = temp
 
 print("Solution:", result)
-input()

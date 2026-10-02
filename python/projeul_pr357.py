@@ -21,7 +21,6 @@ generatelist == True.
 
 An initial list of primes can be provided in primelist.
 """
-    
 
     def __init__(sieve, N, primelist = None, generatelist = False):
         sieve.__setup_sieve__(N, primelist)
@@ -29,7 +28,6 @@ An initial list of primes can be provided in primelist.
         if generatelist:
             sieve.getPrimes()
 
-               
     def __setup_sieve__(sieve, N, primelist):
         sieve.__N = N
         sieve.__topIndex = N//2 + 1
@@ -41,7 +39,6 @@ An initial list of primes can be provided in primelist.
                     sieve.__oddPrimeSieve[multipleOfp] = 0
         sieve.__oddPrimeSieve[0] = 0
 
-        
     def __generate_sieve__(sieve):
         sqrt = sieve.__N**.5
         for k, isItPrime in enumerate(sieve.__oddPrimeSieve,1):
@@ -52,10 +49,8 @@ An initial list of primes can be provided in primelist.
                 for multipleOfOdd in range(odd**2//2, sieve.__topIndex, odd):
                     sieve.__oddPrimeSieve[multipleOfOdd] = 0
 
-
     def __repr__(sieve):
         return str(sieve.getPrimes())
-
 
     def __len__(sieve):
         try:
@@ -64,10 +59,8 @@ An initial list of primes can be provided in primelist.
             sieve.__numberOfPrimes = len(sieve.getPrimes())
         return sieve.__numberOfPrimes
 
-
     def __getitem__(sieve, key):
         return sieve.getPrimes()[key]
-
 
     def isOddPrime(sieve, n):
         """Test if the odd number n is prime against the sieve."""
@@ -76,7 +69,6 @@ An initial list of primes can be provided in primelist.
         except IndexError:
             pass
         raise Exception( "n must be less than " + str(sieve.__N) )
-
 
     def isPrime(sieve, n):
         """Test if n is prime against the sieve."""
@@ -88,10 +80,8 @@ An initial list of primes can be provided in primelist.
         else:
             return sieve.isOddPrime(n)
 
-
     def topLimit(sieve):
         return sieve.__N
-
 
     def getPrimes(sieve):
         """Get a list with all the prime numbers in the sieve."""
@@ -109,13 +99,9 @@ An initial list of primes can be provided in primelist.
             return sieve.__primes
 
 
-
-
 primesieve = PrimeSieve(10**8)
 
-
 primeGeneratingIntegers = [1]
-        
 
 for p in range(3,100000000,4):
     if not primesieve.isOddPrime(p):
@@ -128,12 +114,8 @@ for p in range(3,100000000,4):
                 break
     else:
         primeGeneratingIntegers.append( candidate )
-                
-            
+
 answer = sum(primeGeneratingIntegers)
-
-    
-
 
 print(
     problem,
@@ -144,5 +126,3 @@ print(
     answer,
     sep=""
     )
-
-input()

@@ -1,4 +1,4 @@
-"""Problem 145: How many reversible numbers are there below one-billion?
+problem = """Problem 145: How many reversible numbers are there below one-billion?
 
 Some positive integers n have the property that the sum [ n + reverse(n) ]
 consists entirely of odd (decimal) digits. For instance, 36 + 63 = 99 and
@@ -54,4 +54,6 @@ def w(L):
     if L%4==3:
         return 20**(L//4+1)*5**(2*(L//4)+1)
 
-print("Solution:", sum([w(L) for L in range(1,10)]))
+print(problem)
+print("\n\nExplanation:", helpme)
+print("Answer:", sum([w(L) for L in range(1,10)]))

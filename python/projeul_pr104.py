@@ -2,7 +2,7 @@ problem = """\
 Problem 104: Pandigital Fibonacci ends
 
 The Fibonacci sequence is defined by the recurrence relation:
-F_n = F_(n−1) + F_(n−2), where F_1 = 1 and F_2 = 1.
+F_n = F_(n-1) + F_(n-2), where F_1 = 1 and F_2 = 1.
 
 It turns out that F_541, which contains 113 digits, is the first Fibonacci number
 for which the last nine digits are 1-9 pandigital (contain all the digits 1 to
@@ -33,7 +33,7 @@ def fibonacci(n):
         a = fiblist[-2]
         b = fiblist[-1]
         for i in range(n-len(fiblist)+1):
-            a, b = b, (a+b) 
+            a, b = b, (a+b)
             fiblist.append(b)
         return fiblist[n]
 
@@ -58,8 +58,8 @@ n//2 and n//2+1."""
             return fastfiblist[n]
         except KeyError:
             a = fastFib(n//2-1)
-            b = fastFib(n//2)  
-            fastfiblist[n] = 2*a*b + b**2  
+            b = fastFib(n//2)
+            fastfiblist[n] = 2*a*b + b**2
             return fastfiblist[n]
 
 
@@ -80,14 +80,14 @@ involving n//2 and n//2+1."""
         except KeyError:
             r = (fastFibLast9Digits(n//2+1)**2 \
                  + fastFibLast9Digits(n//2)**2) % getlastdigs
-            fastfiblastlist[n] = r 
+            fastfiblastlist[n] = r
             return r
     else:
         try:
             return fastfiblastlist[n]
         except KeyError:
             a = fastFibLast9DigitsMemoryError(n//2-1)
-            b = fastFibLast9DigitsMemoryError(n//2) 
+            b = fastFibLast9DigitsMemoryError(n//2)
             r = ( 2*a*b + b**2  ) % getlastdigs
             fastfiblastlist[n] = r
             return r
@@ -123,7 +123,6 @@ def slowLastDigitPeriod(numbOfDigs):
 
 
 
-        
 def lastDigitsPeriod(numbOfDigs):
     if numbOfDigs < 3: return slowLastDigitPeriod(numbOfDigs)
     else: return 15*10**(numbOfDigs-1)
@@ -176,8 +175,4 @@ while True:
         previouskey = k
         if is9Pandigital(previous[0]):
             number_double_pandigital_fib += 1
-            print("\n")
             print( number_double_pandigital_fib,":","("+str(k)+", ", previous[0]+" ... "+str(b)+")" )
-
-
-

@@ -7,15 +7,15 @@ p2>=q2 and 0<=p1,p2,q1,q2<=n:
 
     1. O == right angle, it is easy to calculate that there exist n**2
                          right triangles with these specifications.
-                         
+
     2. P == right angle. Therefore we obtain
          OP**2 + PQ**2 = OQ**2 <=> p1**2 + p2**2 - p1*q1 - p2*q2 = 0
          We can count the triangles in this case by finding all the
          solutions of this equation that respect the constraints.
-    
+
     3. Q == right angle, the number of these triangles equals the number
                          of right triangles in the second case because
-                         of the x=y line symmetry.                         
+                         of the x=y line symmetry.
 """
 
 n = 50
@@ -37,7 +37,7 @@ for q1 in range(0,n+1):
 trianglesWithQasRightAngle = trianglesWithPasRightAngle
 
 
-print(problem, explanation, sep="\n\n")        
+print(problem, explanation, sep="\n\n")
 input(
     "Number of right triangles with non-negative integer coordinates<="
     + str(n)

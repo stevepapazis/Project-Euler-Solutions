@@ -18,9 +18,9 @@ def function(sum, coin):
         restSum = (200-sum)//coins[coin]
         for i in range(restSum, -1, -1):
             counter+=function(sum+i*coins[coin], coin-1)
-        return counter        
+        return counter
 
 counter = function(0, 7)
-    
+
 print(problem, '\n', "Solution: ", counter, sep='')
 input()

@@ -3,7 +3,7 @@ def u(n)->'1-n+n**2-n**3+n**4-n**5+n**6-n**7+n**8-n**9+n**10':
     S=1
     for i in range(1,11): S+=(-n)**i
     return S
-    
+
 def detA(n)->'det(A(n))':
     p=1
     for i in range(2,n+1):

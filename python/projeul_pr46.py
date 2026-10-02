@@ -50,4 +50,3 @@ while flag:
         except IndexError:
             end+=1000
             primes(end)
-    

@@ -24,7 +24,7 @@ def function(n):
         elif n==89:
             return 1
 
-list=[0,0,1]   
+list=[0,0,1]
 count89=1      #2->89
 for i in range(3,568):       #abcdefg<10000000 a,b,c,d,e,f,g in {1,2,...,9}=>a**2+b**2+...+g**2<9**2+9**2+9**2+9**2+9**2+9**2+9**2=7*81=567
     t=function(i)
@@ -39,4 +39,3 @@ for i in range(568,10000000):
     count89+=list[s]
 
 print(problem, '\n\n', "Solution: ", count89, sep='')
-input()

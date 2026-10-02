@@ -31,9 +31,9 @@ N = (N-1) + 1
   = 1 + 1 + 1 + ... + 1 + 1 + 1
 
 w(N,i) = sum( w(N-n,n) for n in range(1, i+1 ) )"""
-    
+
     if N == 0: return 1
-    if i == 1: return 1  
+    if i == 1: return 1
     elif i >= N:
         i = N
     S = 0
@@ -46,5 +46,4 @@ w(N,i) = sum( w(N-n,n) for n in range(1, i+1 ) )"""
     return S
 
 #w(100,100) also includes the sum 100+0
-print(problem, "\n\nAnswer: ", w(100,100)-1, sep='\n')  
-input()
+print(problem, "\n\nAnswer: ", w(100,100)-1, sep='\n')

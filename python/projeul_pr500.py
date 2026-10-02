@@ -44,4 +44,3 @@ max = 1
 for i,e in enumerate(exponentsOfAnswer):
     max = ((primes[i]**(2**e-1))%500500507*max)%500500507
 print("The answer is: ", max)
-input()

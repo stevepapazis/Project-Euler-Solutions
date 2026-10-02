@@ -18,6 +18,5 @@ for tilelength in (2, 3, 4):
     while tilenumber*tilelength <= 50:
         S+=function(tilelength, tilenumber)
         tilenumber+=1
-    
+
 print("Solution:",S)
-input()

@@ -19,5 +19,3 @@ for b in ("30","70"):
         for j in range(10):
             if s[2*j]!=str((j+1)%10): break
         else: print(int(s)**.5)
-
-#answer=1389019170

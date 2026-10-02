@@ -64,7 +64,7 @@ def eulerCoin(n):
                 eulercoins.append((r,i))
                 return (r,i)
 
-limit = eulerCoin(16)[0] 
+limit = eulerCoin(16)[0]
 
 indices = [
     candidateValue * m_inverse % p for candidateValue in range(1,limit)
@@ -80,8 +80,8 @@ for value in values:
         eulercoins.append( ( limit, limit * m_inverse % p ) )
 
 eulercoins.append( (0,p) )
-        
-    
+
+
 solution = sum([i[0] for i in eulercoins])
 
 

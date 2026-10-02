@@ -18,7 +18,7 @@ def squareRoot(n, accuracy):
     n = n*10**(2*acc)
 
     def addLastDig( decimal, digit ): return decimal*10 + digit
-    
+
     def findNxtDecimal( decimal, lowGuess, highGuess ):
         if highGuess == lowGuess + 1:
             high = addLastDig( decimal, highGuess )
@@ -26,13 +26,13 @@ def squareRoot(n, accuracy):
                 return addLastDig( decimal, lowGuess )
             else:
                 return high
-            
+
         midGuess = ( lowGuess + highGuess )//2
         midDecimal = addLastDig( decimal, midGuess )
-        
+
         if midDecimal**2 > n:
             return findNxtDecimal( decimal, lowGuess, midGuess )
-        else: 
+        else:
             return findNxtDecimal( decimal, midGuess, highGuess )
 
     while acc <= accuracy:

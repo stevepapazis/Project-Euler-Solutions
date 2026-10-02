@@ -29,6 +29,6 @@ for r in range(0, 26):
         for b in range(0, 13):
             if 50 >= 2*r + 3*g + 4*b:
                 s+=function(50 - 2*r - 3*g - 4*b, r, g, b)
-                
+
 print("Solution:", s)
 input()

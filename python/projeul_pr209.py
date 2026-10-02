@@ -10,7 +10,7 @@ Since each tuple (a,b,c,d,e,f) corresponds to a binary number in the range 0
 to 63, we shall work with the numbers 0 to 63, instead of the binary strings.
 
 Since 0 == τ(n)*τ(σ(n)), we deduce that  τ(n)==1 => τ(σ(n))==0. This
-implication creates some restrictions for downstream values of τ. 
+implication creates some restrictions for downstream values of τ.
 
 
 Notice that
@@ -67,19 +67,18 @@ def sigma(n):
 def countTheBranchesInTreeWithRootAt(n):
 
     def countBranches(m, target, initial_assumption, last_value, S):
-        
         if m == target:
             if initial_assumption == 1 and last_value == 1:
                 return 0
             else:
                 return S
-            
+
         if last_value == 1:
             return countBranches(sigma(m),target,initial_assumption,0,S)
         else:
             return countBranches(sigma(m),target,initial_assumption,0,S)\
-                 + countBranches(sigma(m),target,initial_assumption,1,S) 
-    
+                 + countBranches(sigma(m),target,initial_assumption,1,S)
+
     return countBranches(sigma(n),n,0,0,1) + countBranches(sigma(n),n,1,1,1)
 
 def numberOfBranchesOnTreeWithLength(k):
@@ -108,5 +107,3 @@ print(
     "Answer: N(1)*N(2)*N(3)*N(6)*N(6)*N(46) = ", answer,
     sep=""
     )
-
-input()

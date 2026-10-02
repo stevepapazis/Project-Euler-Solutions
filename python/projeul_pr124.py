@@ -60,7 +60,7 @@ for n in range(1,100001):
     for i in temp: radn*=i
     if radn<10000:           #n>=rad(n)>10000
         E.append((radn,n))
-    
+
 E.sort()
 print("Solution:",E[10000][1])
 input()

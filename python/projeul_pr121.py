@@ -29,7 +29,7 @@ def probability_to_get_blue_disk_in_turn(n): return Fraction(1,n+1)
 
 def probability_player_wins_game_in(N):
     l = [[]]
-    
+
     for depth in range(N,0,-1):
         temp = []
         for i in l:
@@ -38,7 +38,7 @@ def probability_player_wins_game_in(N):
         l = temp.copy()
 
     outcomesWhenPlayerWins = filter(lambda x: sum(x)>0, l)
-    
+
     probability = 0
 
     for i in outcomesWhenPlayerWins:
@@ -55,7 +55,7 @@ def probability_player_wins_game_in(N):
 
 #Let p = probability_player_wins_game_in(N).
 # E(L)>0 <=> 1 - p - (1-payout)*p > 0
-#        <=> 1/p > payout 
+#        <=> 1/p > payout
 #The game organiser will lose money if they offer a prize greater than 1/p.
 #Therefor, the maximum prize must be the greater integer less than 1/p.
 

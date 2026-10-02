@@ -2,14 +2,14 @@
 
 A unit fraction contains 1 in the numerator. The decimal representation of the
 unit fractions with denominators 2 to 10 are given:
-1/2    =   0.5 
-1/3    =   0.(3)     
+1/2    =   0.5
+1/3    =   0.(3)
 1/4    =   0.25
 1/5    =   0.2
-1/6    =   0.1(6)    
+1/6    =   0.1(6)
 1/7    =   0.(142857)
 1/8    =   0.125
-1/9    =   0.(1)     
+1/9    =   0.(1)
 1/10   =   0.1
 
 Where 0.1(6) means 0.166666..., and has a 1-digit recurring cycle. It can be
@@ -41,7 +41,7 @@ for i in range(list[-1]+2, 1000, 2):
 del list[:2]
 
 l=len(list)
-max=1 
+max=1
 s=9
 
 while l!=1:
@@ -56,4 +56,3 @@ while l!=1:
         i+=1
 
 print("Solution",list[0])
-input()

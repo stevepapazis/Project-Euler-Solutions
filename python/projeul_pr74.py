@@ -38,5 +38,4 @@ c=0
 for i in range(3,1000000):
     if production(i)==60:
         c+=1
-        
-#PossibleSolution=402
+print(c)
