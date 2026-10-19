@@ -39,7 +39,7 @@ fn answer(max_ndx: u64) {
     let int_sum_p_m = solution(max_ndx);
     let time = start_time.elapsed();
     print!("\nΣ[P_m] = {} when 2 ≤ m ≤ {}. ", int_sum_p_m, max_ndx);
-    println!("Computed in {}.{} seconds.\n", time.as_secs(), time.subsec_nanos());
+    println!("Computed in {:.3} seconds", time.as_secs_f64());
 }
 
 fn main() {

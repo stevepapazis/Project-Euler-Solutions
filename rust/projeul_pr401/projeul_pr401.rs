@@ -159,8 +159,7 @@ fn answer(top_index: u64, modulus: u64) {
         modulus ,
         solution(top_index, modulus)
     );
-    let time = start_time.elapsed();
-    println!("Computed in {}.{} seconds.\n", time.as_secs(), time.subsec_nanos());
+    println!("Computed in {:.3} seconds", start_time.elapsed().as_secs_f64());
 }
 
 fn main() {

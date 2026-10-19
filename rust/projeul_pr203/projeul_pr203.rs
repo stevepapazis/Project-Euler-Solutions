@@ -1,9 +1,7 @@
-use std::time::{Duration, Instant};
+use std::time::Instant;
 use std::collections::HashMap;
 
-fn problem() {
-    println!("
-Problem 203: Squarefree Binomial Coefficients
+const PROBLEM: &str="Problem 203: Squarefree Binomial Coefficients
 
 The binomial coefficients C(n,k) can be arranged in triangular form,
 Pascal's triangle, like this:
@@ -25,18 +23,11 @@ Pascal's triangle, all except 4 and 20 are squarefree. The sum of the
 distinct squarefree numbers in the first eight rows is 105.
 
 Find the sum of the distinct squarefree numbers in the first 51 rows
-of Pascal's triangle.
-"
-    )
-}
+of Pascal's triangle.";
 
-fn explanation() {
-    println!("
+const EXPLANATION: &str = "Solution explanation:
 The binomial coefficient C(n,k) = n!/(k!(n-k)!) is squarefree exactly
-when there is no prime number p <= n**.5 such as C(n,k) % p**2 == 0.
-"
-    )
-}
+when there is no prime number p <= n**.5 such as C(n,k) % p**2 == 0.";
 
 fn solution(rows: u64) -> u64 {
     struct Combinations {
@@ -79,17 +70,15 @@ fn solution(rows: u64) -> u64 {
     distinct_squarefree_combinations.values().sum()
 }
 
-fn answer(ans: u64, time: Duration) {
-    println!(
-"\nTherefore, there are {} distinct squarefree numbers in
-the first 51 rows of the triangle.", ans);
-    println!("Computed in {}.{} seconds.\n", time.as_secs(), time.subsec_nanos());
-}
 
 fn main() {
-    let start_time = Instant::now();
-    problem();
-    explanation();
-    let ans = solution(50);
-    answer(ans, start_time.elapsed());
+    let start = Instant::now();
+    println!("{PROBLEM}\n");
+    println!("{EXPLANATION}");
+    println!("
+Answer: there are {} distinct square-free numbers in the
+first 51 rows of the triangle.",
+        solution(50)
+    );
+    println!("\nComputed in {:.3} seconds", start.elapsed().as_secs_f64());
 }

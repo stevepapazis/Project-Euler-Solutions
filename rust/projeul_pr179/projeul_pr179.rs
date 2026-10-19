@@ -24,12 +24,7 @@ fn main() {
     }
 
     let count = divisor_number.windows(2).filter(|w| w[0] == w[1]).count();
-    print!("Answer: There are {count} such numbers.");
+    println!("Answer: There are {count} such numbers.");
 
-    let time = start.elapsed();
-    println!(
-        "\nComputed in {}.{} seconds.",
-        time.as_secs(),
-        time.subsec_nanos()
-    );
+    println!("\nComputed in {:.3} seconds", start.elapsed().as_secs_f64());
 }

@@ -93,10 +93,5 @@ fn main() {
 
     println!("Answer: {next_odd}");
 
-    let time = start.elapsed();
-    println!(
-        "\nComputed in {}.{} seconds.",
-        time.as_secs(),
-        time.subsec_nanos()
-    );
+    println!("\nComputed in {:.3} seconds", start.elapsed().as_secs_f64());
 }

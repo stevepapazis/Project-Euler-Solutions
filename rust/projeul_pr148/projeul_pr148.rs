@@ -1,12 +1,10 @@
-use std::time::{Duration, Instant};
+use std::time::Instant;
 use std::collections::HashMap;
 
-fn problem() {
-    println!("
-Problem 148: Exploring Pascal's triangle
+const PROBLEM: &str = "Problem 148: Exploring Pascal's triangle
 
-We can easily verify that none of the entries in the first seven rows of
-Pascal's triangle are divisible by 7:
+We can easily verify that none of the entries in the first seven rows
+of Pascal's triangle are divisible by 7:
                                     1
                                  1     1
                               1     2     1
@@ -19,10 +17,7 @@ However, if we check the first one hundred rows, we will find that only
 2361 of the 5050 entries are not divisible by 7.
 
 Find the number of entries which are not divisible by 7 in the first
-one billion (10**9) rows of Pascal's triangle.
-"
-    )
-}
+one billion (10**9) rows of Pascal's triangle.";
 
 fn explanation() {
     struct CachedSequence {
@@ -82,7 +77,7 @@ Let e(n) be the number of entries in the first n rows which are not
 divisible by 7 and let T(n) be the nth triangular number. From the
 above analysis, we can deduce the formula
 
-              e(n) = T(a) * T(7)**k + (a+1) * e(n-a*7**k)
+            e(n) = T(a) * T(7)**k + (a+1) * e(n-a*7**k)
 
 where k := floor( log_p(n) ) and a := n//(p**k).
     ");
@@ -109,17 +104,13 @@ fn solution(rows: u64, p: u64) -> u64 {
     sum
 }
 
-fn answer(ans: u64, time: Duration) {
-    println!(
-"\nTherefore, there are {} entries which are not divisible
-by 7 in the first one billion rows of the triangle.", ans);
-    println!("Computed in {}.{} seconds.\n", time.as_secs(), time.subsec_nanos());
-}
-
 fn main() {
     let start_time = Instant::now();
-    problem();
+    println!("{PROBLEM}\n\n");
     explanation();
     let ans = solution(10u64.pow(9), 7);
-    answer(ans, start_time.elapsed());
+    println!("
+Therefore, there are {} entries which are not divisible
+by 7 in the first one billion rows of the triangle.", ans);
+    println!("Computed in {:.3} seconds", start_time.elapsed().as_secs_f64());
 }

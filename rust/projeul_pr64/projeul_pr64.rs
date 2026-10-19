@@ -1,8 +1,6 @@
-use std::time::{Duration, Instant};
+use std::time::Instant;
 
-fn problem() {
-    println!("
-Problem 64: Odd period square roots
+const PROBLEM: &str = "Problem 64: Odd period square roots
 
 All square roots are periodic when written as continued fractions
 and can be written in the form:
@@ -33,18 +31,11 @@ square roots are:
 
 Exactly four continued fractions, for N<=13, have an odd period.
 
-How many continued fractions for N<=10000 have an odd period?
-"
-    )
-}
+How many continued fractions for N<=10000 have an odd period?";
 
-fn explanation() {
-    println!("
+const EXPLANATION: &str = "Solution explanation:
 Let N**.5=[a0; a1,a2,a3,...]. It can be proven that the pattern
-repeats when a_k == 2*a_0 and the period is k.
-"
-    )
-}
+repeats when a_k == 2*a_0 and the period is k.";
 
 fn solution(max: u64) -> u64 {
     fn is_not_square(n: u64) -> bool { (n as f64).sqrt().floor().powi(2) as u64 != n }
@@ -70,16 +61,11 @@ fn solution(max: u64) -> u64 {
                 .sum()
 }
 
-fn answer(ans: u64, time: Duration) {
-    println!("\nFor N<=10000, there are {} continued fractions with an odd period.", ans);
-    println!("Computed in {}.{} seconds.", time.as_secs(), time.subsec_nanos());
-    println!("");
-}
-
 fn main() {
-    let start_time = Instant::now();
-    problem();
-    explanation();
-    let ans = solution( 10000 );
-    answer(ans, start_time.elapsed());
+    let start = Instant::now();
+    println!("{PROBLEM}\n\n");
+    println!("{EXPLANATION}\n\n");
+    println!("Results:");
+    println!("For N<=10000, there are {} continued fractions with an odd period.", solution(10000));
+    println!("\nComputed in {:.3} seconds", start.elapsed().as_secs_f64());
 }

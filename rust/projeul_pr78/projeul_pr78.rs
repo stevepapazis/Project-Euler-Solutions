@@ -1,13 +1,11 @@
 use std::collections::HashMap;
-use std::time::{Duration, Instant};
+use std::time::Instant;
 
-fn problem() {
-    println!("
-Problem 78: Coin partitions
+const PROBLEM: &str = "Problem 78: Coin partitions
 
-Let p(n) represent the number of different ways in which n coins can be
-separated into piles. For example, five coins can separated into piles in
-exactly seven different ways, so p(5)=7.
+Let p(n) represent the number of different ways in which n coins can
+be separated into piles. For example, five coins can separated into
+piles in exactly seven different ways, so p(5)=7.
 
       1.  OOOOO
       2.  OOOO  O
@@ -17,22 +15,15 @@ exactly seven different ways, so p(5)=7.
       6.  OO  O  O  O
       7.  O  O  O  O  O
 
-Find the least value of n for which p(n) is divisible by one million.
-"
-    )
-}
+Find the least value of n for which p(n) is divisible by one million.";
 
-fn explanation() {
-    println!("
+const EXPLANATION: &str = "Solution explanation:
 A recursive formula for calculating p(n) is given by the pentagonal
 number theorem:
       p(n) = sum_{{k=1}}^{{+∞}} (-1)**(k-1) * p(n - g_k)
 where g_k is the k-th generalized pentagonal number; that is
       g_{{2k-1}} = p_{{-k}} and g_{{2k}} = p_k,
-when k = 1,2,3,... and p_n = (3n**2-n)/2.
-"
-    )
-}
+when k = 1,2,3,... and p_n = (3n**2-n)/2.";
 
 fn solution(digit_limit: u32) -> usize {
     let size = 10isize.pow(digit_limit);
@@ -104,16 +95,11 @@ fn solution(digit_limit: u32) -> usize {
     }).next().expect("return solution") as usize
 }
 
-fn answer(ans: usize, time: Duration) {
-    println!("\n{} is the least value of n such as p(n) is divisible by one million.", ans);
-    println!("Computed in {}.{} seconds.", time.as_secs(), time.subsec_nanos());
-    println!("");
-}
-
 fn main() {
-    let start_time = Instant::now();
-    problem();
-    explanation();
-    let ans = solution(6);
-    answer(ans, start_time.elapsed());
+    let start = Instant::now();
+    println!("{PROBLEM}\n\n");
+    println!("{EXPLANATION}\n\n");
+    println!("Results:");
+    println!("\nAnswer: {} is the least value of n such as p(n) is divisible by one million.", solution(6));
+    println!("\nComputed in {:.3} seconds", start.elapsed().as_secs_f64());
 }
