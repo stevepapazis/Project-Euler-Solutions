@@ -1,0 +1,68 @@
+Problem 301: Nim
+
+Nim is a game played with heaps of stones, where two players take it in turn to
+remove any number of stones from any heap until no stones remain.
+
+We'll consider the three-heap normal-play version of Nim, which works as follows:
+
+- At the start of the game there are three heaps of stones.
+- On each player's turn, the player may remove any positive number of stones from
+  any single heap.
+- The first player unable to move (because no stones remain) loses.
+
+If (n_1,n_2,n_3) indicates a Nim position consisting of heaps of size n_1, n_2, and
+n_3, then there is a simple function, which you may look up or attempt to deduce for
+yourself, X(n_1,n_2,n_3) that returns:
+
+- zero if, with perfect strategy, the player about to move will eventually lose; or
+- non-zero if, with perfect strategy, the player about to move will eventually win.
+
+For example X(1,2,3) = 0 because, no matter what the current player does, the
+opponent can respond with a move that leaves two heaps of equal size, at which point
+every move by the current player can be mirrored by the opponent until no stones
+remain; so the current player loses. To illustrate:
+
+- current player moves to (1,2,1)
+- opponent moves to (1,0,1)
+- current player moves to (0,0,1)
+- opponent moves to (0,0,0), and so wins.
+
+For how many positive integers n <= 2^30 does X(n,2n,3n) = 0?
+
+
+Solution explanation:
+
+It is a rather well-known fact that a Nim position is losing if and only if the XOR
+(^) of the heap sizes is zero. With optimal play, a player can always move to such
+a position if one exists. In other words,
+                X(n_1, n_2, n_3) = 0  <=>  n_1 ^ n_2 ^ n_3 = 0
+
+Therefore, X(n, 2n, 3n) = 0 <=> n ^ 2n ^ 3n = 0 <=> n ^ 2n = 3n = n + 2n.
+
+Consider the binary representation of n = sum(i=0 to N) 2**i b_i. Then,
+        n + 2n = b_0 + sum(i=1 to N) 2**i (b_{i-1} + b_i) + 2**(N+1) b_N
+        n ^ 2n = b_0 + sum(i=1 to N) 2**i (b_{i-1} ^ b_i) + 2**(N+1) b_N
+
+Starting from the least significant bit, we can show by induction that n+2n = n^2n
+implies b_{i-1} + b_i = b_{i-1} ^ b_i, meaning that no carries occur during the
+addition. Hence:
+- b_{i-1} = 0 => b_i is either 0 or 1.
+- b_{i-1} = 1 => b_i is 0.
+
+It is easy to see that each valid binary representation of n corresponds to a branch
+of the Fibonacci tree:
+
+            b0             0                1               F_3 = 2
+                          / \               |
+            b1           0   1              0               F_4 = 3
+                        / \   \            / \
+            b2         0   1   0          0   1             F_5 = 5
+                      / \  |   |\        / \   \
+            b3       0  1  0   0 1      0   1   0           F_6 = 8
+                    /|  | / \  |\ \    / \  |  / \
+            b4     0 1  0 0 1  0 1 0  0   1 0  0  1         F_7 = 13
+           ...
+
+As such, there are F_{k+2} - 1 positive integers strictly smaller than 2**k satisfying
+the condition, where F_k denotes the k-th Fibonacci number, defined by F_1 = F_2 = 1
+and F_{k+2}=F_{k+1}+F_k.

@@ -1,0 +1,13 @@
+[package]
+name = "projeul_pr512"
+version = "0.1.0"
+authors = ["stevepapazis <stevepapazis@users.noreply.github.com>"]
+edition = "2024"
+
+[dependencies]
+
+[[bin]]
+name = "projeul_pr512"
+path = "projeul_pr512.rs"
+test = false
+bench = false
