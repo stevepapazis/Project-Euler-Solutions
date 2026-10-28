@@ -1,11 +1,11 @@
-"""Problem 41: Pandigital prime
+problem = """Problem 41: Pandigital prime
 
 We shall say that an n-digit number is pandigital if it makes use of all the
 digits 1 to n exactly once. For example, 2143 is a 4-digit pandigital and is
 also prime.
 
 What is the largest n-digit pandigital prime that exists?"""
-   
+
 def rotationsGenerator(l):
     length = len(l)
     if length==2:
@@ -46,5 +46,6 @@ if max==0:
         value = int(''.join([str(j) for j in i]))
         if is_it_prime(value) and max<value:
             max = value
-                
-print("Solution:", max)
+
+print(problem)
+print("Answer:", max)

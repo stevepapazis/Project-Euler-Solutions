@@ -1,4 +1,4 @@
-"""Problem 49: Prime permutations
+problem = """Problem 49: Prime permutations
 
 The arithmetic sequence, 1487, 4817, 8147, in which each of the terms increases
 by 3330, is unusual in two ways: (i) each of the three terms are prime, and,
@@ -71,6 +71,6 @@ for i in primes:
     for i in temp:
         if i not in output:
             output.append(i)
-print(output)
 
-solution=296962999629
+print(problem)
+print("Answer:", output)

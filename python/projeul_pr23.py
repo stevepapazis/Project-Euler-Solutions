@@ -1,4 +1,4 @@
-"""Problem 23: Non-abundant sums
+problem = """Problem 23: Non-abundant sums
 
 A perfect number is a number for which the sum of its proper divisors is exactly
 equal to the number. For example, the sum of the proper divisors of 28 would be
@@ -50,5 +50,6 @@ c=0
 for i in range(24,28123):
     if l[c]==i: c+=1
     else: sum+=i
-    
-print("Solution:",sum)
+
+print(problem)
+print("Answer:",sum)
